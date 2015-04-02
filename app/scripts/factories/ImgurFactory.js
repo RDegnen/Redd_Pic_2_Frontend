@@ -14,14 +14,9 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
   };
 
   var requestImages = function(options){
-
-    for(var param in options){
-      var query = ServerUrl + '/imgers/' + options[param];
-    }
-
     return $http.post(ServerUrl + '/imgurs', options)
     .success(function(response){
-      console.log(response);
+      angular.copy(response.data, images);
     });
   };
 
