@@ -7,7 +7,9 @@ function navbarController(ImgurFactory){
   var vm = this;
 
   vm.subreddit = {
-    name: ''
+    name: '',
+    sort: '',
+    window: ''
   };
 
   vm.query = function(){
