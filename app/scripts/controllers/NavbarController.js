@@ -1,7 +1,9 @@
 'use strict';
 angular.module('MainController').controller('NavbarController', navbarController);
 
-function navbarController(){
+navbarController.$inject = ['ImgurFactory'];
+
+function navbarController(ImgurFactory){
   var vm = this;
 
   vm.subreddit = {
@@ -9,8 +11,8 @@ function navbarController(){
   };
 
   vm.query = function(){
-    console.log(vm.subreddit.name);
+    ImgurFactory.requestImages(vm.subreddit);
+    console.log(vm.subreddit);
   };
-// function that captures a form input and parses the form data and passes that form data to the imgur factory
-  // vm.query : { subreddit: "whatever the input was"}
+
 }

@@ -3,15 +3,7 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
 
   var images = [];
 
-  var getImages = function(options){
-    // // options are going to look something like an object:
-    // { }
-    // if(options){
-    //   for(var param in options){
-    //     // append url with options[params]
-    //   }
-    //   http://localhost:3000/imgurs?subreddit=nakedladytees
-    // }
+  var getImages = function(){
     return $http.get(ServerUrl + '/imgurs')
     .success(function(response){
       angular.copy(response.data, images);
@@ -21,9 +13,22 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
     });
   };
 
+  var requestImages = function(options){
+
+    for(var param in options){
+      var query = ServerUrl + '/imgers/' + options[param];
+    }
+
+    return $http.post(ServerUrl + '/imgurs', options)
+    .success(function(response){
+      console.log(response);
+    });
+  };
+
   return {
     images: images,
-    getImages: getImages
+    getImages: getImages,
+    requestImages: requestImages
   };
 
 }]);
