@@ -1,9 +1,9 @@
 'use strict';
 angular.module('MainController').controller('NavbarController', navbarController);
 
-navbarController.$inject = ['ImgurFactory'];
+navbarController.$inject = ['ImgurFactory', '$routeParams'];
 
-function navbarController(ImgurFactory){
+function navbarController(ImgurFactory, $routeParams){
   var vm = this;
 
   vm.subreddit = {
@@ -12,9 +12,13 @@ function navbarController(ImgurFactory){
     window: ''
   };
 
+
   vm.query = function(){
+    debugger
+    $routeParams.subredditName = vm.subreddit.name;
     ImgurFactory.requestImages(vm.subreddit);
     console.log(vm.subreddit);
   };
+
 
 }

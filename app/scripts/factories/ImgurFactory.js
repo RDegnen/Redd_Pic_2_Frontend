@@ -1,12 +1,13 @@
 'use strict';
 angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', function($http, ServerUrl){
 
-  var images = [];
+  var homeImages = [];
+  var requestedImages = [];
 
-  var getImages = function(){
+  var indexImages = function(){
     return $http.get(ServerUrl + '/imgurs')
     .success(function(response){
-      angular.copy(response.data, images);
+      angular.copy(response.data, homeImages);
     })
     .error(function(data, status){
       console.log(data, status);
@@ -17,13 +18,14 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
     return $http.post(ServerUrl + '/imgurs', options)
     .success(function(response){
       console.log(response);
-      angular.copy(response.data, images);
+      angular.copy(response.data, requestedImages);
     });
   };
 
   return {
-    images: images,
-    getImages: getImages,
+    homeImages: homeImages,
+    requestedImages: requestedImages,
+    indexImages: indexImages,
     requestImages: requestImages
   };
 

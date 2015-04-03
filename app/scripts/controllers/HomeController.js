@@ -5,6 +5,6 @@ homeController.$inject = ['ImgurFactory'];
 
 function homeController(ImgurFactory){
   var vm = this;
-  vm.images = ImgurFactory.images;
+  vm.images = ImgurFactory.homeImages;
 
 };

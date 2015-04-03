@@ -6,6 +6,11 @@ angular.module('ReddPicApp').config(['$routeProvider', function($routeProvider){
       controller: 'HomeController',
       controllerAs: 'homeController'
     })
+    .when('/:subredditName',{
+      templateUrl: 'views/images.html',
+      controller: 'ImageController',
+      controllerAs: 'imageController'
+    })
     .otherwise({
       redirectTo: '/'
     });

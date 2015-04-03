@@ -18,6 +18,6 @@ angular.module('ReddPicApp', [
   'MainController',
   'MainDirective'
 ]).run(function(ImgurFactory){
-  ImgurFactory.getImages();
+  ImgurFactory.indexImages();
 });
 
