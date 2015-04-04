@@ -15,6 +15,7 @@ angular.module('ReddPicApp', [
   'ngRoute',
   'ngSanitize',
   'ngTouch',
+  'ui.bootstrap',
   'MainController',
   'MainDirective'
 ]).run(function(ImgurFactory){

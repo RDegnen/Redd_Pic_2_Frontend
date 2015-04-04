@@ -1,5 +1,16 @@
 <h1>HOME BITCH</h1>
-<div ng-repeat="image in homeController.images">
-  <img src="{{image.link}}"/>
-</div>
 
+<div ng-controller="ModalController">
+<script type="text/ng-template" id="modal.html">
+  <div class="modal-header">
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-footer">
+  </div>
+</script>
+
+<div ng-repeat="image in homeController.images">
+  <img src="{{image.link}}" ng-click="open()"/>
+</div>
+</div>
