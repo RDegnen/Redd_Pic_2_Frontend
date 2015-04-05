@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 angular.module('MainDirective').directive('rdNavbar', [function(){
   return {
     restrict: 'E',
@@ -7,8 +7,5 @@ angular.module('MainDirective').directive('rdNavbar', [function(){
     controllerAs: 'navbarController',
     bindToController: true,
     scope: {},
-    link: function($scope, element, attrs){
-
-    }
   };
 }]);

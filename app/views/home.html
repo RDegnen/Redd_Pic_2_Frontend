@@ -1,5 +1,7 @@
 <h1>HOME BITCH</h1>
-<div ng-repeat="image in homeController.images">
-  <img src="{{image.link}}"/>
-</div>
 
+<div ng-controller="ModalController">
+  <div ng-repeat="image in homeController.images">
+    <img src="{{image.link}}" ng-click="open(image)"/>
+  </div>
+</div>
