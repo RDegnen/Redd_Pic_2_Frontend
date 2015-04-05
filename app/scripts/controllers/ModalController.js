@@ -5,13 +5,17 @@ modalController.$inject = ['$scope', '$modal', '$log'];
 
 function modalController($scope, $modal, $log){
 
-  $scope.open = function(size){
-    debugger
+  $scope.open = function(image){
+
     var modalInstance = $modal.open({
       templateUrl: 'modal.html',
       controller: 'ModalInstanceController',
-      size: size,
-      resolve: {}
+      scope: $scope,
+      resolve: {
+        image: function(){
+        return image;
+        }
+      }
     });
 
     modalInstance.result.then(function(selectedItem){

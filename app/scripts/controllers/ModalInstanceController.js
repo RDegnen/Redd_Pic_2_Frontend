@@ -1,6 +1,7 @@
 'use strict';
 angular.module('MainController').controller('ModalInstanceController', modalinstanceController);
 
-function modalinstanceController($scope, $modalInstance){
-
+function modalinstanceController($scope, $modalInstance, image){
+  debugger
+  $scope.image = image;
 }
