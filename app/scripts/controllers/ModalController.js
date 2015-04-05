@@ -8,7 +8,7 @@ function modalController($scope, $modal, $log){
   $scope.open = function(image){
 
     var modalInstance = $modal.open({
-      templateUrl: 'modal.html',
+      templateUrl: 'views/modal.html',
       controller: 'ModalInstanceController',
       scope: $scope,
       resolve: {

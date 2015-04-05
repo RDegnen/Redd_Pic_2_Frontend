@@ -1,3 +1,5 @@
-<div ng-repeat="image in imageController.images">
-  <img src="{{image.link}}"/>
+<div ng-controller="ModalController">
+  <div ng-repeat="image in imageController.images">
+    <img src="{{image.link}}" ng-click="open(image)"/>
+  </div>
 </div>
