@@ -1,7 +1,7 @@
 <div ng-controller="ModalController">
   <div infinite-scroll="imageController.nextPage()">
-    <div ng-repeat="image in imageController.images">
-      <img src="{{image.link}}" ng-click="open(image)"/>
+    <div id="image-div" ng-repeat="image in imageController.images">
+      <img src="{{image.link}}" class="image" ng-click="open(image)"/>
     </div>
   </div>
 </div>

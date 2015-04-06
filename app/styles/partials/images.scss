@@ -1,5 +1,8 @@
-.image {
+#image-div {
   display: inline-block;
-  max-width: 800px;
-  max-height: 280px;
+
+  img {
+    max-width: 800px;
+    max-height: 280px;
+  }
 }
