@@ -10,11 +10,18 @@ function imageController(ImgurFactory, $routeParams){
   vm.currentRoute = {
     name: $routeParams.subredditName,
     sort: $routeParams.sort,
-    window: $routeParams.window
+    window: $routeParams.window,
+    page: 0
   };
 
   vm.queryRoute = function(){
     ImgurFactory.currentRoute(vm.currentRoute);
+  };
+
+  vm.nextPage = function(){
+    if (vm.images.length < 1) return;
+    vm.currentRoute.page += 1;
+    ImgurFactory.nextPage(vm.currentRoute);
   };
 
   vm.queryRoute();

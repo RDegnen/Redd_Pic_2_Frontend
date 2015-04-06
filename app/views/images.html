@@ -1,5 +1,7 @@
 <div ng-controller="ModalController">
-  <div ng-repeat="image in imageController.images">
-    <img src="{{image.link}}" ng-click="open(image)"/>
+  <div infinite-scroll="imageController.nextPage()" infinite-scroll-disabled="imageController.busy">
+    <div ng-repeat="image in imageController.images">
+      <img src="{{image.link}}" ng-click="open(image)"/>
+    </div>
   </div>
 </div>

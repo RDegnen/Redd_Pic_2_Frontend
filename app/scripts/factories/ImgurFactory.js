@@ -29,12 +29,23 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
     });
   };
 
+  var nextPage = function(options){
+    return $http.post(ServerUrl + '/imgurs', options)
+    .success(function(response){
+      var data = response.data;
+      for(var i = 0; i < data.length; i++){
+        requestedImages.push(data[i]);
+      }
+    });
+  };
+
   return {
     homeImages: homeImages,
     requestedImages: requestedImages,
     indexImages: indexImages,
     requestImages: requestImages,
-    currentRoute: currentRoute
+    currentRoute: currentRoute,
+    nextPage: nextPage
   };
 
 }]);
