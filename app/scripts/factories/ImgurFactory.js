@@ -22,11 +22,19 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
     });
   };
 
+  var currentRoute = function(options){
+    return $http.post(ServerUrl + '/imgurs', options)
+    .success(function(response){
+      angular.copy(response.data, requestedImages);
+    });
+  };
+
   return {
     homeImages: homeImages,
     requestedImages: requestedImages,
     indexImages: indexImages,
-    requestImages: requestImages
+    requestImages: requestImages,
+    currentRoute: currentRoute
   };
 
 }]);
