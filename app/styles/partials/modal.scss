@@ -1,0 +1,13 @@
+#modal-image {
+  max-width: 1200px;
+  max-height: 560px;
+}
+.modal-content {
+  position: absolute;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 900px;
+  }
+}
