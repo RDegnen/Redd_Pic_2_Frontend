@@ -7,4 +7,4 @@ function homeController(ImgurFactory){
   var vm = this;
   vm.images = ImgurFactory.homeImages;
 
-};
+}

@@ -1,8 +1,10 @@
-#image-div {
-  display: inline-block;
+.image-div {
+  display: inline-flex;
+  margin-left: 5px;
 
   img {
-    max-width: 800px;
-    max-height: 280px;
+    max-width: 100%;
+    max-height: 200px;
   }
 }
+

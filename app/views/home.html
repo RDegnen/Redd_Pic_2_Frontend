@@ -1,7 +1,7 @@
-<h1>HOME BITCH</h1>
+<h1>Welcome to Ross' Reddit Pictures App</h1>
 
 <div ng-controller="ModalController">
-  <div id="image-div" ng-repeat="image in homeController.images">
+  <div class="image-div" ng-repeat="image in homeController.images">
     <img src="{{image.link}}" ng-click="open(image)"/>
   </div>
 </div>
