@@ -1,5 +1,10 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#/">
+      Ross' Reddit Pics
+    </a>
+  </div>
     <form class="navbar-form" role="search" ng-submit="navbarController.query(navbarController.subreddit)">
       <div class="form-group">
         <input type="text" class="form-control" ng-model="navbarController.subreddit.name" placeholder="Subreddit">
@@ -17,8 +22,4 @@
       </div>
       <button type="submit" class="btn btn-default" ng-click="navbarController.query()">Search</button>
     </form>
-    <ul class="nav navbar-nav">
-      <li></li>
-    </ul>
-  </div>
 </nav>

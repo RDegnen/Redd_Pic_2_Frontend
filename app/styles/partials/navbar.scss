@@ -1,0 +1,21 @@
+nav {
+  .container {
+    margin-left: 0;
+  }
+}
+
+.navbar-default {
+  background-color: white;
+  border-color: $site-red;
+
+  .navbar-brand {
+    color: $site-red;
+    font-family: 'Mr Dafoe';
+    font-size: 24px;
+  }
+}
+
+.navbar-form {
+  float: right;
+}
+
