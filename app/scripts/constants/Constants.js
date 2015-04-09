@@ -1,2 +1,2 @@
 'use strict';
-angular.module('ReddPicApp').constant('ServerUrl', 'http://localhost:3000');
+angular.module('ReddPicApp').constant('ServerUrl', 'https://quiet-citadel-4703.herokuapp.com');
