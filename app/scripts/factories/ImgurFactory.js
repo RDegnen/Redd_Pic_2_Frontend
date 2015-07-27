@@ -5,7 +5,7 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
   var requestedImages = [];
 
   var indexImages = function(){
-    return $http.get(ServerUrl + '/imgurs')
+    return $http.get(ServerUrl + '/imgur/index')
     .success(function(response){
       angular.copy(response.data, homeImages);
     })
@@ -15,7 +15,7 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
   };
 
   var requestImages = function(options){
-    return $http.post(ServerUrl + '/imgurs', options)
+    return $http.post(ServerUrl + '/imgur/gallery', options)
     .success(function(response){
       console.log(response);
       angular.copy(response.data, requestedImages);
@@ -23,14 +23,14 @@ angular.module('ReddPicApp').factory('ImgurFactory', ['$http', 'ServerUrl', func
   };
 
   var currentRoute = function(options){
-    return $http.post(ServerUrl + '/imgurs', options)
+    return $http.post(ServerUrl + '/imgur/gallery', options)
     .success(function(response){
       angular.copy(response.data, requestedImages);
     });
   };
 
   var nextPage = function(options){
-    return $http.post(ServerUrl + '/imgurs', options)
+    return $http.post(ServerUrl + '/imgur/gallery', options)
     .success(function(response){
       var data = response.data;
       for(var i = 0; i < data.length; i++){
