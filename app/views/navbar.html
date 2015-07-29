@@ -4,8 +4,13 @@
     <a class="navbar-brand" href="#/">
       Ross' Reddit Pics
     </a>
+    <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+      <span class='icon-bar'></span>
+      <span class='icon-bar'></span>
+      <span class='icon-bar'></span>
+    </button>
   </div>
-    <form class="navbar-form" role="search" ng-submit="navbarController.query(navbarController.subreddit)">
+    <form class="navbar-form collapse navbar-collapse" role="search" ng-submit="navbarController.query(navbarController.subreddit)">
       <div class="form-group">
         <input type="text" class="form-control" ng-model="navbarController.subreddit.name" placeholder="Subreddit">
         <select class="form-control" ng-model="navbarController.subreddit.sort">
