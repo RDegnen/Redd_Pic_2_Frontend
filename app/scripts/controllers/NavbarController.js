@@ -14,6 +14,7 @@ function navbarController(ImgurFactory, $location){
 
   vm.query = function(){
     $location.path('/subreddits/' + vm.subreddit.name + '/' + vm.subreddit.sort + '/' + vm.subreddit.window);
+    $location.path(url.replace(/ /g, ""));
     ImgurFactory.requestImages(vm.subreddit);
     console.log(vm.subreddit);
   };
